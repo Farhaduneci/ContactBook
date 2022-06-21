@@ -4,7 +4,6 @@ Yb      Yb   dP 88 Y88   88    dP__Yb  Yb        88       88""Yb Yb   dP Yb   dP
  YboodP  YbodP  88  Y8   88   dP""""Yb  YboodP   88       88oodP  YbodP   YbodP  88  Yb 
 =======================================================================================
 
-
 A simple contact list, written in Python using Dictionaries and Binary Search to keep
 contacts sorted. Available commands:
 

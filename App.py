@@ -1,5 +1,4 @@
 from collections import defaultdict
-from tabulate import tabulate
 from bisect import insort
 
 
@@ -89,7 +88,7 @@ class PhoneBook:
     def __str__(self):
         return '\n'.join(
             '{}:\n   {}'.format(letter, ', '.join(map(str, contacts)))
-            for letter, contacts in self.contacts.items())
+            for letter, contacts in self.contacts.items() if contacts)
 
 
 def add_contact():
@@ -137,10 +136,13 @@ def main():
         print("\033c")
 
         with COLOR('INFO'):
-            print(tabulate(
-                [(i, " ".join(command.__name__.split("_")).title())
-                    for i, command in COMMANDS.items()],
-                headers=['#', 'Command']))
+            menu_items = [
+                (i, " ".join(command.__name__.split("_")).title()) for i, command in COMMANDS.items()
+            ]
+            print("CONTACT BOOK MENU")
+            print("=" * 20)
+            print("\n".join("{}: {}".format(i, command)
+                  for i, command in menu_items))
 
             # get command
             selection = input("\nPlease enter your selection: ")
